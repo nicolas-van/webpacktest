@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import './index.scss';
 
 function component() {
     var element = document.createElement('div');
