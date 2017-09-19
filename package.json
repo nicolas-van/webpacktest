@@ -1,0 +1,16 @@
+{
+    "name": "webpacktest",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "bootstrap-sass": "^3.3.7",
+        "lodash": "^4.17.4"
+    },
+    "devDependencies": {
+        "webpack": "^3.6.0"
+    },
+    "scripts": {
+        "build": "webpack"
+    }
+}
