@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -6,6 +7,11 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Webpack Test'
+        })
+    ],
     module: {
         rules: [{
             test: /\.scss$/,
@@ -16,9 +22,9 @@ module.exports = {
             }, {
                 loader: "sass-loader" // compiles Sass to CSS
             }]
-        },{
-          exclude: [/\.js$/, /\.scss$/],
-          loader: 'file-loader',
-      },]
+        }, {
+            test: [/\.woff2$/, /\.eot$/, /\.svg$/, /\.ttf$/, /\.woff$/],
+            loader: 'file-loader',
+        }, ]
     }
 };
