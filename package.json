@@ -7,7 +7,7 @@
         "bootstrap-sass": "^3.3.7",
         "koa": "^2.3.0",
         "koa-file-server": "^2.3.1",
-        "koa-router": "^7.2.1",
+        "koa-trie-router": "^2.1.6",
         "lodash": "^4.17.4"
     },
     "devDependencies": {

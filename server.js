@@ -1,5 +1,5 @@
 const Koa = require('koa');
-const Router = require('koa-router');
+const Router = require('koa-trie-router')
 
 const app = new Koa();
 const router = new Router();
@@ -9,12 +9,11 @@ app.use(require('koa-file-server')({
     index: true,
 }));
 
-router.get('/testapi', function (ctx, next) {
+router.get('/testapi', async function (ctx, next) {
     ctx.body = "test";
 });
 
 app
-    .use(router.routes())
-    .use(router.allowedMethods());
+    .use(router.middleware());
 
 app.listen(3000);
