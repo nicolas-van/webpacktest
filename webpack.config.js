@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const packageJson = require('./package.json');
 
 module.exports = {
     entry: './src/index.js',
@@ -18,7 +19,14 @@ module.exports = {
             use: [{
                 loader: "style-loader" // creates style nodes from JS strings
             }, {
-                loader: "css-loader" // translates CSS into CommonJS
+                loader: "css-loader", // translates CSS into CommonJS
+                options: {
+                  alias: (() => {
+                      const m = {};
+                      m[packageJson.name] = path.resolve('.');
+                      return m;
+                  })(),
+                },
             }, {
                 loader: "sass-loader" // compiles Sass to CSS
             }]

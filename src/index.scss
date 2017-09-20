@@ -3,12 +3,3 @@
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "./bootswatch";
-
-
-$font-stack: Helvetica, sans-serif;
-$primary-color: red;
-
-body {
-    font: $font-stack;
-    color: $primary-color;
-}
